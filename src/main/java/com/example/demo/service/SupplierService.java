@@ -15,12 +15,11 @@ public class SupplierService {
     @Autowired
     private SupplierRepository supplierRepo;
 
-    public Supplier saveSupplierCatalogsDetails(SupplierRequest request)
-    {
+    public Supplier saveSupplierCatalogsDetails(SupplierRequest request) {
         return supplierRepo.save(request.getSupplier());
     }
-    public SupplierResponse getSkuName(int id)
-    {
+
+    public SupplierResponse getSkuName(int id) {
 
         return supplierRepo.getSkuName(id);
     }

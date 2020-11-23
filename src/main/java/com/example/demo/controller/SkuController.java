@@ -16,13 +16,14 @@ import java.util.List;
 public class SkuController {
     @Autowired
     private SupplierService supplierService;
+
     @PostMapping("/supplierDetails")
-    public Supplier supplierDetails(@RequestBody SupplierRequest request){
+    public Supplier supplierDetails(@RequestBody SupplierRequest request) {
         return supplierService.saveSupplierCatalogsDetails(request);
     }
 
     @GetMapping("/get")
-    public SupplierResponse getSkuName(@RequestParam int id){
+    public SupplierResponse getSkuName(@RequestParam int id) {
         return supplierService.getSkuName(id);
     }
 
