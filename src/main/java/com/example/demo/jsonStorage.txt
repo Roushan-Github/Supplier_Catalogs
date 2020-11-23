@@ -1,0 +1,15 @@
+{
+  "supplier":{
+    "supplier_Name":"James",
+    "catalogs":[{
+      "sku_id":"15",
+      "sku_name":"Tablet",
+      "sku_description":"its a smart phone",
+      "brand_name":"oppo",
+      "brand_description":"quad camera"
+      
+    }]
+  }
+}
+
+
