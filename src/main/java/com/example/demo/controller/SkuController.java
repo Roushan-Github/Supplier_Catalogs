@@ -26,7 +26,7 @@ public class SkuController {
         return supplierService.getSkuName(id);
     }
     @GetMapping("/getCatalogsDetails")
-    public List<Catalog> getSkuName(@RequestParam String SkuName) {
+    public List<Catalog> getCatalogDetails(@RequestParam String SkuName) {
         return supplierService.getCatalogDetails(SkuName);
     }
 

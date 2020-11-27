@@ -4,6 +4,7 @@ import com.example.demo.model.Catalog;
 import com.example.demo.model.Supplier;
 import com.example.demo.pojo.SupplierRequest;
 import com.example.demo.pojo.SupplierResponse;
+import com.example.demo.repository.CatalogRepository;
 import com.example.demo.repository.SupplierRepository;
 import com.example.demo.service.SupplierService;
 import org.junit.jupiter.api.Test;
@@ -25,6 +26,9 @@ class DemoApplicationTests {
 
     @MockBean
     private SupplierRepository supplierRepository;
+
+    @MockBean
+    private CatalogRepository catalogRepository;
 
     @Test
     public void saveSupplierDetails() {
@@ -51,5 +55,16 @@ class DemoApplicationTests {
         supplierResponse.setSku_name("Hp Laptops");
         when(supplierService.getSkuName(9)).thenReturn(supplierResponse);
     }
+    @Test
+    public void getCatalogDetails(){
+        Catalog catalog = new Catalog();
+        catalog.setSku_id(11);
+        catalog.setSku_name("Samsung Tablet");
+        catalog.setSku_description("It consists quad camera");
+        catalog.setBrand_name("Samsung Galaxy");
+        catalog.setBrand_description("Samsung Tab A Series ");
+        List<Catalog> catalogs = new ArrayList<>();
+        when(supplierService.getCatalogDetails("Tablet")).thenReturn(catalogs);
 
+    }
 }
