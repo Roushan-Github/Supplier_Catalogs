@@ -1,10 +1,9 @@
 package com.example.demo.controller;
 
+import com.example.demo.model.Catalog;
 import com.example.demo.model.Supplier;
 import com.example.demo.pojo.SupplierRequest;
 import com.example.demo.pojo.SupplierResponse;
-import com.example.demo.repository.CatalogRepository;
-import com.example.demo.repository.SupplierRepository;
 import com.example.demo.service.SupplierService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +24,10 @@ public class SkuController {
     @GetMapping("/get")
     public SupplierResponse getSkuName(@RequestParam int id) {
         return supplierService.getSkuName(id);
+    }
+    @GetMapping("/getCatalogsDetails")
+    public List<Catalog> getSkuName(@RequestParam String SkuName) {
+        return supplierService.getCatalogDetails(SkuName);
     }
 
 }

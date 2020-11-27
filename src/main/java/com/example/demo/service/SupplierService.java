@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.model.Catalog;
 import com.example.demo.model.Supplier;
 import com.example.demo.pojo.SupplierRequest;
 import com.example.demo.pojo.SupplierResponse;
@@ -7,6 +8,8 @@ import com.example.demo.repository.CatalogRepository;
 import com.example.demo.repository.SupplierRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class SupplierService {
@@ -22,5 +25,9 @@ public class SupplierService {
     public SupplierResponse getSkuName(int id) {
 
         return supplierRepo.getSkuName(id);
+    }
+
+    public List<Catalog> getCatalogDetails(String skuName) {
+        return catalogRepo.findBySkuName(skuName);
     }
 }
